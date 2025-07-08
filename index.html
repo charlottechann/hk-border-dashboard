@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HK Border Crossing Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Header -->
+        <header class="dashboard-header">
+            <div class="container">
+                <div class="header-content">
+                    <div class="header-left">
+                        <h1 class="dashboard-title">🚇 HK Border Crossing Dashboard</h1>
+                        <p class="last-update">Last Updated: <span id="last-update-time">Loading...</span></p>
+                    </div>
+                    <div class="header-right">
+                        <div class="controls">
+                            <button id="theme-toggle" class="btn btn--outline btn--sm">
+                                <span id="theme-icon">🌙</span>
+                            </button>
+                            <button id="refresh-btn" class="btn btn--primary btn--sm">
+                                <span id="refresh-icon">🔄</span> Refresh
+                            </button>
+                            <span class="auto-refresh-timer">
+                                Next update: <span id="countdown">15:00</span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Main Content -->
+        <main class="container">
+            <!-- Filter Controls -->
+            <div class="filter-section">
+                <div class="filter-controls">
+                    <div class="view-toggle">
+                        <label class="form-label">View:</label>
+                        <select id="view-select" class="form-control">
+                            <option value="resident">Resident</option>
+                            <option value="visitor">Visitor</option>
+                        </select>
+                    </div>
+                    <div class="type-filter">
+                        <label class="form-label">Type:</label>
+                        <select id="type-filter" class="form-control">
+                            <option value="all">All Types</option>
+                            <option value="Rail">Rail</option>
+                            <option value="Road">Road</option>
+                        </select>
+                    </div>
+                    <div class="sort-control">
+                        <label class="form-label">Sort:</label>
+                        <select id="sort-select" class="form-control">
+                            <option value="name">Name</option>
+                            <option value="waiting-time">Waiting Time</option>
+                            <option value="popularity">Popularity</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Quick Stats -->
+            <div class="stats-section">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <div class="stat-number" id="total-open">0</div>
+                        <div class="stat-label">Open Points</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="normal-count">0</div>
+                        <div class="stat-label">Normal</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="busy-count">0</div>
+                        <div class="stat-label">Busy</div>
+                    </div>
+                    <div class="stat-card">
+                        <div class="stat-number" id="very-busy-count">0</div>
+                        <div class="stat-label">Very Busy</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Control Points Grid -->
+            <div class="control-points-section">
+                <div class="section-header">
+                    <h2>Control Points</h2>
+                    <div class="loading-indicator" id="loading-indicator">
+                        <span class="spinner"></span> Loading...
+                    </div>
+                </div>
+                <div class="control-points-grid" id="control-points-grid">
+                    <!-- Control point cards will be inserted here -->
+                </div>
+            </div>
+
+            <!-- Popular Crossings -->
+            <div class="popular-section">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>🌟 Popular Crossings</h3>
+                        <p>The most frequently used border crossing points:</p>
+                        <ul class="popular-list">
+                            <li><strong>Lo Wu</strong> - Most popular, accounts for 85% of total departures</li>
+                            <li><strong>Lok Ma Chau Spur Line</strong> - High passenger volume rail crossing</li>
+                            <li><strong>Shenzhen Bay</strong> - One of the busiest control points</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Travel Tips -->
+            <div class="tips-section">
+                <div class="card">
+                    <div class="card__body">
+                        <h3>💡 Travel Tips</h3>
+                        <ul class="tips-list">
+                            <li>Rail crossings (Lo Wu, Lok Ma Chau Spur Line) are generally more convenient for foot passengers</li>
+                            <li>Road crossings are better for vehicles and buses</li>
+                            <li>Check opening hours before traveling - some points close at night</li>
+                            <li>Consider using less busy crossing points during peak times</li>
+                            <li>Download the official Immigration Department mobile app for real-time updates</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <!-- Footer -->
+        <footer class="dashboard-footer">
+            <div class="container">
+                <p>Data provided by Hong Kong Immigration Department • Updates every 15 minutes</p>
+            </div>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
