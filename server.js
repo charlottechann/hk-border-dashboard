@@ -13,6 +13,7 @@ app.get('/api/resident', async (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
     res.json(data);
   } catch (err) {
+    console.error('Resident API error:', err);
     res.status(500).json({ error: 'Failed to fetch resident data' });
   }
 });
