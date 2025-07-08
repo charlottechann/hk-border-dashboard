@@ -18,8 +18,8 @@ const appData = {
     "99": { resident: "Non Service Hours", visitor: "Non Service Hours", color: "gray", level: "Closed" }
   },
   apiEndpoints: {
-    resident: "https://secure1.info.gov.hk/immd/mobileapps/2bb9ae17/data/CPQueueTimeR.json",
-    visitor: "https://secure1.info.gov.hk/immd/mobileapps/2bb9ae17/data/CPQueueTimeV.json"
+    resident: "https://hk-border-dashboard.onrender.com/api/resident",
+    visitor: "https://hk-border-dashboard.onrender.com/api/visitor"
   },
   popularCrossings: ["LWS", "LSC", "SBC"]
 };
