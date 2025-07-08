@@ -25,6 +25,7 @@ app.get('/api/visitor', async (req, res) => {
     res.set('Access-Control-Allow-Origin', '*');
     res.json(data);
   } catch (err) {
+    console.error('Visitor API error:', err);
     res.status(500).json({ error: 'Failed to fetch visitor data' });
   }
 });
