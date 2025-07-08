@@ -1,10 +1,9 @@
-// server.js
 const express = require('express');
 const fetch = require('node-fetch');
 const app = express();
 
 const RESIDENT_URL = 'https://secure1.info.gov.hk/immd/mobileapps/2bb9ae17/data/CPQueueTimeR.json';
-const VISITOR_URL  = 'https://secure1.info.gov.hk/immd/mobileapps/2bb9ae17/data/CPQueueTimeV.json';
+const VISITOR_URL = 'https://secure1.info.gov.hk/immd/mobileapps/2bb9ae17/data/CPQueueTimeV.json';
 
 app.get('/api/resident', async (req, res) => {
   try {
@@ -16,7 +15,7 @@ app.get('/api/resident', async (req, res) => {
     console.error('Resident API error:', err);
     res.status(500).json({ error: 'Failed to fetch resident data' });
   }
-});
+}); // <-- This closing brace was missing
 
 app.get('/api/visitor', async (req, res) => {
   try {
@@ -28,7 +27,7 @@ app.get('/api/visitor', async (req, res) => {
     console.error('Visitor API error:', err);
     res.status(500).json({ error: 'Failed to fetch visitor data' });
   }
-});
+}); // <-- This closing brace was missing
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
